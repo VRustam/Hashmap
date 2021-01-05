@@ -1,0 +1,106 @@
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Objects;
+
+public class HashMap_oyrenilir {
+    public static void main(String[] args) {
+
+       HashMap<String,Integer> map =new HashMap<>(16, 0.75f);
+        map.put("Aydin", 1);
+        map.put("razin", 2);
+        map.put("dasd", 3);
+        map.put("ewqew", 4);
+        map.put(null,123456);
+        map.put("Ea",5);
+
+        System.out.println(map.get("Ea"));
+
+        Iterator iterator = map.keySet().iterator();
+        while(iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+        Iterator iterator1 = map.values().iterator();
+        while (iterator1.hasNext()){
+            System.out.println(iterator1.next());
+        }
+
+
+
+
+
+
+
+       /* String Str1="Azer";
+        String Str2="A2";
+        String Str3="A3";
+        System.out.println(Str1.hashCode());
+        System.out.println(Str2.hashCode());
+        System.out.println(Str3.hashCode());
+
+        Studens St1 = new Studens(1,"Azer");
+        System.out.println(St1.hashCode());
+
+        Studens St2 = new Studens(1,"Azer");
+        System.out.println(St2.hashCode());
+
+        System.out.println(St1.equals(St2));
+
+        HashMap<String,Integer> map = new HashMap<>();
+        map.put("Azer",1);
+        map.put("aydin",2); */
+
+
+
+
+
+       /* HashMap<Integer, String> masinNomreler = new HashMap<>();
+        masinNomreler.put(22, "sirvan");
+        masinNomreler.put(1, "baki");
+        masinNomreler.put(12, "xacmaz");
+        System.out.println(masinNomreler);
+
+        System.out.println(masinNomreler.size());
+        System.out.println(masinNomreler.isEmpty());
+        System.out.println(masinNomreler.get(22));
+         String deyer = masinNomreler.get(1);
+        System.out.println(deyer);
+        System.out.println(masinNomreler.clone());
+        System.out.println(masinNomreler.containsKey(22));
+        System.out.println(masinNomreler.containsValue("baki"));
+
+        for(Integer keys : masinNomreler.keySet()){
+            System.out.println(keys);
+        }
+        for(String values : masinNomreler.values()){
+            System.out.println(values);
+        }
+
+        for (Map.Entry <Integer,String> entry : masinNomreler.entrySet()){
+            System.out.println(entry.getKey()+entry.getValue());
+        }  */
+    }
+
+}
+class Studens{
+    int i;
+    String ad;
+
+    public Studens(int i, String ad) {
+        this.i = i;
+        this.ad = ad;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Studens)) return false;
+        Studens studens = (Studens) o;
+        return i == studens.i && Objects.equals(ad, studens.ad);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(i, ad);
+    }
+}
